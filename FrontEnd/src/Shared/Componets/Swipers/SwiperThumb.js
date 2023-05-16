@@ -76,57 +76,19 @@ const SwiperThumb = ()=> {
         }
       })
 
+    let discriptionText;
+
+    data[type].map((results)=> {
+            if (results.id === selectID) {
+                return discriptionText = results.discription
+            }
+    })
+
      
    
   
 
-  
-//   optionVal.map((element)=>{
-//     if (element.value === type ) {
-//        let res = data.filter((el)=> el.key1 !== element.key)
-//        console.log(res);
-//     }
-//   })
-//   const MovieSrc = [
-//     {   
-//         id:'m1',
-//         title:'Charlie 777',
-//         src:'https://i.postimg.cc/76zz21qg/charlie777.jpg',
-//         discription:'something'
-//     },
-//     {   
-//         id:'m2',
-//         title:'KGF',
-//         src:'https://i.postimg.cc/J4MXsBvk/kgf.jpg',
-//         discription:'somethingHorrible'
-//     },
-//     {
-//         id:'m3',
-//         title:'tararu',
-//         src:'https://i.postimg.cc/wMcsW6yM/tagaru.jpg',
-//         discription:'somethingFishy'
-//     }
-//   ]
-//   const AnimatedSrc = [
-//     {
-//         id:'a1',
-//         title:'animated1',
-//         src:'https://i.postimg.cc/yNP611Km/animated1.jpg',
-//         discription:'somethingnew'
-//     },
-//     {
-//         id:'a2',
-//         title:'animated2',
-//         src:'https://i.postimg.cc/FKmsXfMF/animated2.jpg',
-//         discription:'somethingWonder'
-//     },
-//     {
-//         id:'a3',
-//         title:'animated3',
-//         src:'https://i.postimg.cc/zXVyxgr9/animated3.jpg',
-//         discription:'somethingWOW'
-//     }
-//   ]
+
 
 
    
@@ -145,22 +107,17 @@ const SwiperThumb = ()=> {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {Object.values(loopData).map((values)=>{
+         {data[type]?.map((res)=>{
           
             return(
                 <>
                     <SwiperSlide>
-                        <img  src={Object.entries(values)[2][1]}  alt=""/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img  src={Object.entries(values)[2][1]} alt=""/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img  src={Object.entries(values)[2][1]}  alt=""/>
+                        <img  src={res.src} id={res.id}  alt=""/>
                     </SwiperSlide>
                 </>
             )
         })
+        
         
         }
       
@@ -182,22 +139,19 @@ const SwiperThumb = ()=> {
       
     
      
-         {Object.entries(loopData).map((res)=>{
-            console.log(res[1].src);
-            return(
-<>
+     {data[type]?.map((res)=>{
+          
+          return(
+              <>
                   <SwiperSlide>
-                      <img  src='https://i.postimg.cc/yNP611Km/animated1.jpg' alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      <img  src='https://i.postimg.cc/yNP611Km/animated1.jpg' alt=""/>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      <img  src='https://i.postimg.cc/yNP611Km/animated1.jpg' alt="" />
+                      <img onClick={(event)=> setSelectId(event.target.id)}  src={res.src} id={res.id}  alt=""/>
                   </SwiperSlide>
               </>
-            )
-         })}
+          )
+      })
+      
+      
+      }
               
          
 
@@ -237,7 +191,7 @@ const SwiperThumb = ()=> {
                 <Accordion defaultActiveKey="0">
                     <Accordion.Header> </Accordion.Header>
                     <Accordion.Body>
-                       
+                       {discriptionText}
                     </Accordion.Body>
                 </Accordion>
             </Col>
