@@ -1,0 +1,32 @@
+.placesSection{
+    padding: 50px 0px;
+}
+.formBox{
+    background-color: #e7e0e0bd;
+    border-radius: 4px;
+}
+.customForm label{
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.customForm input{
+    padding: 10px 15px!important;
+    font-size: 16px;
+    font-weight: 500;
+    border-color: #000!important;
+}
+.customForm input:invalid,.customForm input:valid{
+    background-image: none!important;
+}
+.invalid{
+    margin: 5px 0px!important;
+    font-weight: bold!important;
+    font-size: 13px!important;
+}
+
+@media (max-width:414px){
+    .formBox{
+        width: 95%;
+    }
+}

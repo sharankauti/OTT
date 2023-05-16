@@ -1,0 +1,115 @@
+a{
+    text-decoration: none!important;
+}
+.customHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 16px 0px;
+    background-color: #13294B;
+}
+.headerTitle{
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+.navButton{
+    display: none;
+    border: none;
+    margin-right: 2rem;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent!important;
+}
+
+#hamburgerInput {
+    display:none
+}
+.hamburger{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+ }
+.line {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: #FFFFFF;
+    transition: 0.5s;
+ }
+ .line:nth-child(1) { top: 12px; }
+ .line:nth-child(2) { top: 24px; }
+ .line:nth-child(3) { top: 36px; }
+
+ #hamburgerInput:checked + .hamburger  .line:nth-child(1) {
+    transform: translateY(12px) rotate(-45deg);
+}
+#hamburgerInput:checked + .hamburger  .line:nth-child(2){
+    opacity:0;
+ }
+ 
+ #hamburgerInput:checked + .hamburger  .line:nth-child(3){
+    transform: translateY(-12px) rotate(45deg);
+ }
+
+.navList{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navList li{
+    list-style: none;
+}
+.navList li a{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    font-family: cursive;
+    letter-spacing: 1px;
+}
+.navList li a.active{
+    border-bottom: 2px solid white;
+}
+.mobileNavLinks .navList{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.mobileNavLinks .navList li{
+    margin: 10px 0px;
+}
+.mobileNavLinks .navList li a{
+    color: #FFFFFF;
+}
+.SideDrawer{
+    position: fixed;
+    padding: 30px 0px;
+    top: 77px;
+    left: 0;
+    height: 100vh;
+    width: 70%;
+    background-color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    z-index: 999;
+}
+.mobileNavLinks{
+    display: none;
+}
+
+
+@media (max-width:844px){
+    .navButton{display: block!important;}
+    .mainNavigation{display: none;}
+    .mobileNavLinks{
+        display: block;
+    }
+    .fixed{
+        position: fixed!important;
+    }
+}
