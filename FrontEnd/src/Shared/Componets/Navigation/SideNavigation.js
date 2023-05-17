@@ -19,7 +19,7 @@ const LeftTabsExample = ()=> {
       <Row className='g-0'>
         <Col sm={12} md={12} lg={2} className='ps-0'>
         <div className={styles.leftAside}>
-            <Nav variant="pills" className="flex-row flex-lg-column">
+            <Nav variant="pills" className="flex-row flex-lg-column justify-content-center">
                 <Nav.Item>
                     <Nav.Link eventKey="first" className={styles.tabLinks}>Channels</Nav.Link>
                 </Nav.Item>
@@ -50,12 +50,12 @@ const LeftTabsExample = ()=> {
             </Tab.Pane>
             <Tab.Pane eventKey="second">
                 <div className={styles.contentArea}>
-                    second Tab
+                    Languages
               </div>
             </Tab.Pane>
             <Tab.Pane eventKey="third">
                 <div className={styles.contentArea}>
-                    third Tab
+                    Geners
               </div>
             </Tab.Pane>
           </Tab.Content>

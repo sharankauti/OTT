@@ -1,16 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from '../../../Shared/Componets/Navigation/MainHeader.module.css'
 import { NavLink } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button  from 'react-bootstrap/Button'
 const NavLinks = (props) => {
+
   return (
+    <>
+
         <ul className={styles.navList}>
             <li className='mx-3'>
-                <NavLink to='/' exact activeStyle={{backgroundColor:'rgba(0, 0, 0, 0.33)',padding:'5px',borderRadius:'4px'}}>Home</NavLink>
+                <NavLink to='/'>Home</NavLink>
             </li>
             <li className='mx-3'>
-                <NavLink to='/' activeStyle={{backgroundColor:'rgba(0, 0, 0, 0.33)',padding:'5px',borderRadius:'4px'}}>Shows</NavLink>
+                <NavLink to='/' >Shows</NavLink>
             </li>
             <li className='mx-3'>
                 <NavLink to='/'>Movie</NavLink>
@@ -31,14 +34,15 @@ const NavLinks = (props) => {
                     <Button variant="outline-success">Search</Button>
                 </Form>
             </li>
-            <li className='ms-5 me-3'>
+            {/* <li className='ms-3 me-3 ms-lg-5 mobileShow'>
                 <Form className="d-flex">
                    <Button variant="outline-light" className='me-2'>Subscribe</Button>
-                   <Button variant="outline-light">Login</Button>
+                   <Button variant="outline-light" onClick={handleShow}>Login</Button>
                 </Form>
-            </li>
+            </li> */}
             
         </ul>
+        </>
   )
 }
 

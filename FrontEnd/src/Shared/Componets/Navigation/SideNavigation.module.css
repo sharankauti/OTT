@@ -1,6 +1,6 @@
 .leftAside{
     position: relative;
-    background-color: rgb(0,0,0.3);
+    background-color: #242145;
     padding: 20px;
     height: 100vh;
 }
@@ -26,7 +26,7 @@
 @media (max-width:844px){
     .leftAside{
         height: auto!important;
-        padding: 0px 10px;
+        padding: 10px 10px;
     }
     .contentArea{
         padding: 20px 20px;

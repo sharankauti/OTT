@@ -1,10 +1,5 @@
 import React from 'react'
-import  ReactDOM  from 'react-dom'
-import styles from '../UI Elements/Modal.module.css'
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-
-
 
 const Modals = (props) => {
   return (

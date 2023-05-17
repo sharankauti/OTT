@@ -6,22 +6,27 @@ import { Link } from 'react-router-dom'
 import NavLinks from './NavLinks'
 import SideDrawer from './SideDrawer'
 import Backdrop from '../UI Elements/Backdrop'
-
+import Form from 'react-bootstrap/Form'
+import Button  from 'react-bootstrap/Button'
+import Modals from '../UI Elements/Modals'
 const MainNavigation = (props) => {
     const [checked,setChecked] = useState(false)
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     
     const handleSideBar = ()=>{
         setChecked(!checked)
         const bodyTag = document.getElementsByTagName('body')[0];
         bodyTag.style.position = checked ? 'unset' : 'fixed';
-        const labelConatains =  document.querySelector('.MainHeader_hamburger__3cZOQ').classList.toggle('active');
+        const labelConatains =  document.querySelector(`.${styles.hamburger}`).classList.toggle('active');
        if (labelConatains) {
-           let lines = document.querySelectorAll('.MainHeader_line__2yYEF');
+           let lines = document.querySelectorAll(`.${styles.line}`);
            lines.forEach((l)=>{
             l.classList.add('rotate')
            })
        }else{
-        let lines = document.querySelectorAll('.MainHeader_line__2yYEF');
+        let lines = document.querySelectorAll(`.${styles.line}`);
            lines.forEach((l)=>{
             l.classList.remove('rotate')
            })
@@ -35,6 +40,19 @@ const MainNavigation = (props) => {
 
   return (
     <>
+     <Modals 
+            size={'sm'}
+            show={show} 
+            onHide={handleClose} 
+            title={props.address}
+            footerButtons={<Button variant='outline-dark' onClick={handleClose}>Close</Button>}
+            backdrop="static"
+            keyboard={false}
+    >
+      <div>
+            Are Sure to LoggedIn!!
+      </div>
+  </Modals>
     {checked ? <Backdrop/> : null}
   <SideDrawer show={checked} onClick={closeSideDrawer}>
         <nav className={styles.mobileNavLinks}> <NavLinks/></nav>
@@ -52,9 +70,17 @@ const MainNavigation = (props) => {
                 <Link to='/'>
                     <div className={styles.headerTitle}>PROOTT</div>
                 </Link>
+               
+
                 <nav className={styles.mainNavigation +" " + 'mx-4 mx-md-4 mx-lg-4'}>
                     <NavLinks/>
                 </nav>
+                <Link to='/' style={{marginLeft:'20px'}}>
+                    <Form className="d-flex">
+                    <Button variant="outline-light" className='me-2'>Subscribe</Button>
+                    <Button variant="outline-light" onClick={handleShow}>Login</Button>
+                    </Form>
+                </Link>
             </Container>
         </MainHeader>
     </>

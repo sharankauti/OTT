@@ -6,7 +6,7 @@ a{
     align-items: center;
     justify-content: space-evenly;
     padding: 16px 0px;
-    background-color: #13294B;
+    background-color: #1b1834;
 }
 .headerTitle{
     font-size: 25px;
@@ -19,7 +19,7 @@ a{
 .navButton{
     display: none;
     border: none;
-    margin-right: 2rem;
+    margin-right: 1rem;
     position: relative;
     cursor: pointer;
     background-color: transparent!important;
