@@ -75,7 +75,7 @@ const MainNavigation = (props) => {
                 <nav className={styles.mainNavigation +" " + 'mx-4 mx-md-4 mx-lg-4'}>
                     <NavLinks/>
                 </nav>
-                <Link to='/' style={{marginLeft:'20px'}}>
+                <Link to='/' style={{marginLeft:'15px'}}>
                     <Form className="d-flex">
                     <Button variant="outline-light" className='me-2'>Subscribe</Button>
                     <Button variant="outline-light" onClick={handleShow}>Login</Button>
