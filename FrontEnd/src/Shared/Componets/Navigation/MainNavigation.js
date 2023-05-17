@@ -58,7 +58,7 @@ const MainNavigation = (props) => {
         <nav className={styles.mobileNavLinks}> <NavLinks/></nav>
     </SideDrawer> 
         <MainHeader>
-            <Container fluid className='d-flex align-items-center px-4 px-md-4 px-lg-5'>
+            <Container fluid className='d-flex align-items-center px-2 px-md-4 px-lg-5'>
                 <button onClick={handleSideBar} className={styles.navButton}>
                     <input type='checkbox' checked={checked} id={styles['hamburgerInput']}/>
                     <label htmlFor='hamburgerInput' className={styles.hamburger}>
